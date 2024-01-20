@@ -8,6 +8,7 @@
 #include "inc/tm4c123gh6pm.h"
 
 #define STEPS_PER_REVOLUTION 200 // Replace this with the actual steps per revolution for your motor
+#define DELAY 4000000
 
 int mainTivaware(void)
 {
@@ -43,9 +44,9 @@ int mainTivaware(void)
                     for (x = 0; x < STEPS_PER_REVOLUTION; x++)
                     {
                         GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_1, GPIO_PIN_1); // Set STEP pin
-                        SysCtlDelay(SysCtlClockGet() / 2000); // Delay for 2ms
+                        SysCtlDelay(DELAY); // Delay for 2ms
                         GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_1, 0x00); // Clear STEP pin
-                        SysCtlDelay(SysCtlClockGet() / 2000); // Delay for 2ms
+                        SysCtlDelay(DELAY); // Delay for 2ms
                     }
                 }
             }
@@ -62,9 +63,9 @@ int mainTivaware(void)
                         for (x = 0; x < STEPS_PER_REVOLUTION; x++)
                         {
                             GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_1, GPIO_PIN_1); // Set STEP pin
-                            SysCtlDelay(SysCtlClockGet() / 5000); // Delay for 5ms
+                            SysCtlDelay(DELAY); // Delay for 5ms
                             GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_1, 0x00); // Clear STEP pin
-                            SysCtlDelay(SysCtlClockGet() / 5000); // Delay for 5ms
+                            SysCtlDelay(DELAY); // Delay for 5ms
                         }
                     }
                 }
