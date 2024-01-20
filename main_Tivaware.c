@@ -32,8 +32,6 @@ int mainTivaware(void)
 
     while (1)
     {
-        bool sw1Pressed = !(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4);
-        bool sw2Pressed = !(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0) & GPIO_PIN_0);
             if (!(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) & GPIO_PIN_4))
             {
                 SysCtlDelay(SysCtlClockGet() / 30); // Delay for 50ms

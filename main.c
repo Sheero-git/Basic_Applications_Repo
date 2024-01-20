@@ -46,8 +46,6 @@ int Leds(void)
     GPIO_PORTB_DEN_R |= GPIO_PORTB_PIN1_STEP; //enable PF1 and PF4 pins as digital GPIO
     while(1)
     {
-        bool sw1Pressed = !(GPIO_PORTF_DATA_R & GPIO_PORTF_PIN4_EN);
-        bool sw2Pressed = !(GPIO_PORTF_DATA_R & GPIO_PORTF_PIN0_EN);
         if(!(GPIO_PORTF_DATA_R & GPIO_PORTF_PIN4_EN))
         {
             Delay(50);
